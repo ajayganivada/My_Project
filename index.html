@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bonsai Economy | Vibrant Botanical Portal</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="auth-screen" class="auth-overlay">
+      <div class="form-box">
+        <h1>BONSAI ECONOMY</h1>
+        <form id="auth-form" autocomplete="off">
+          <div id="reg-box" style="display: none">
+            <input type="text" id="fname" placeholder="First Name" />
+            <input type="email" id="email" placeholder="Email Address" />
+          </div>
+          <input type="text" id="un" placeholder="Username" required />
+          <input type="password" id="pw" placeholder="Password" required />
+          <button type="submit" id="sub-btn" class="btn">LOGIN</button>
+        </form>
+        <p id="tog" class="toggle-text" onclick="togReg()">
+          New Member? <b class="highlight">Join Us</b>
+        </p>
+      </div>
+    </div>
+
+    <div id="main-content">
+      <div class="header-container">
+        <img
+          src="https://logowik.com/content/uploads/images/bonsai-tree-with-green-leaves108.logowik.com.webp"
+          alt="logo"
+          class="logo"
+        />
+        <span class="brand-name">BONSAI ECONOMY</span>
+        <button onclick="location.reload()" class="logout-btn">LOGOUT</button>
+      </div>
+
+      <div class="nav">
+        <div class="it active" onclick="setMode('All', event)">All</div>
+        <div class="it" onclick="setMode('Fresh', event)">Fresh</div>
+        <div class="it" onclick="setMode('Seeds', event)">Seeds</div>
+        <div class="it" onclick="setMode('compost', event)">compost</div>
+        <div class="it" onclick="setMode('Bestseller', event)">Bestseller</div>
+        <div class="it" onclick="setMode('Types', event)">Types</div>
+        <div class="it" onclick="setMode('Customer Services', event)">
+          Services
+        </div>
+        <div class="it" onclick="setMode('Today\'s Deals', event)">Deals</div>
+        <div class="it" onclick="setMode('New Releases', event)">New</div>
+        <div class="it" onclick="setMode('Soil', event)">Soil</div>
+        <div class="it" onclick="setMode('Vermicompost', event)">
+          Vermicompost
+        </div>
+        <div class="it" onclick="setMode('Testing', event)">Testing</div>
+        <div class="it" onclick="showContact()">Contact</div>
+      </div>
+
+      <div class="mode-status" id="mode-display">
+        Welcome to Our Vibrant Garden
+      </div>
+
+      <div class="container" id="gallery"></div>
+
+      <div id="info-modal" class="modal">
+        <button class="close-btn" onclick="closeModal()">BACK TO GARDEN</button>
+        <div class="modal-body">
+          <div class="img-side"><img id="m-img" src="" /></div>
+          <div class="text-side">
+            <h1 id="m-title" class="modal-title"></h1>
+            <h3 id="m-subtitle" class="modal-subtitle"></h3>
+            <div id="m-content"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
